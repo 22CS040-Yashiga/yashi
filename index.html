@@ -22,7 +22,7 @@
             background-color: #222;
             padding: 20px;
         }
-        
+
         nav a {
             text-decoration: none;
             color: white;
@@ -32,7 +32,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        
+
         nav a:hover {
             background-color: #444;
             transform: scale(1.05);
@@ -103,6 +103,23 @@
             text-align: center;
         }
 
+        /* Back button styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            background-color: #444;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -119,6 +136,7 @@
     <div id="home" class="text-container">
         <h1>Welcome to Our Library</h1>
         <p>Your gateway to a world of knowledge</p>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
     </div>
 
     <!-- Library Navigation Section -->
@@ -126,12 +144,14 @@
         <h1>LIBRARY NAVIGATION</h1>
         <p>A BOT TO DIRECT BOOK LOCATION</p>
         <img class="library-image" src="libr.png" alt="Library Image">
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
     </div>
 
     <!-- About Section -->
     <div id="about" class="about">
         <h1>About Us</h1>
         <p>We are a community library dedicated to providing access to books, resources, and more for everyone.</p>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
     </div>
 
     <!-- Contact Us Section -->
@@ -139,6 +159,7 @@
         <h1>Contact Us</h1>
         <p>Email: contact@library.com</p>
         <p>Phone: (123) 456-7890</p>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
     </div>
 
     <!-- Dialogflow Messenger integration -->
