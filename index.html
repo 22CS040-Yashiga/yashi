@@ -1,31 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIBRARY WEBSITE - Home</title>
+    <title>LIBRARY WEBSITE</title>
     <style>
-        /* Styling as before */
-        /* You can reuse the same CSS from your original code here */
-        body { color: white; background-color: #111; font-family: Arial, sans-serif; }
-        h1 { font-size: 3rem; }
-        .back-button { padding: 10px 20px; background-color: #444; color: white; border-radius: 5px; }
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white; /* Text color */
+            background-color: #111; /* Dark background to make the 3D effect pop */
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 20px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            transform: scale(1.05);
+        }
+
+        /* Container for the text */
+        .text-container {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent background for text */
+            z-index: 2;
+            position: relative; /* Ensures text container remains above image */
+        }
+
+        /* 3D Text Styling for Heading */
+        h1 {
+            font-size: 4rem; /* Larger font size for the title */
+            font-weight: bold; /* Bold font */
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 0, 0, 0.5); /* 3D effect with multiple shadows */
+            transform: perspective(500px) rotateX(15deg); /* Add 3D perspective effect */
+        }
+
+        /* 3D Text Styling for Paragraphs */
+        p {
+            font-size: 2rem; /* Larger font size for description */
+            font-weight: bold;  /* Bold text */
+            margin-bottom: 30px; /* Space below the text */
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.5); /* 3D effect with multiple shadows */
+            transform: perspective(500px) rotateX(15deg); /* Add 3D perspective effect */
+        }
+
+        /* 3D Hover Effect on Image */
+        .library-image {
+            width: 100%;   /* Full width of the page */
+            height: auto;  /* Maintain aspect ratio of the image */
+            display: block; /* Ensures no unwanted spacing around the image */
+            position: relative; /* Ensures the image stays below the text */
+            z-index: 1; /* Keeps the image in the background */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        .library-image:hover {
+            transform: scale(1.05) rotateY(10deg); /* 3D scale and rotate effect */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Add shadow for depth on hover */
+        }
+
+        /* Styling for the chatbot in bottom-right corner */
+        df-messenger {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999; /* Ensures chatbot is always on top of everything */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* 3D shadow effect for depth */
+            transform: perspective(500px) rotateX(5deg); /* Slight 3D tilt */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        df-messenger:hover {
+            transform: perspective(500px) rotateX(0deg) scale(1.05); /* Hover effect for slight scale and tilt */
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6); /* Darker shadow on hover */
+        }
+
+        /* About and Contact sections styling */
+        .about, .contact {
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        /* Back button styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            background-color: #444;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="library-navigation.html">Library Navigation</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="#home">Home</a>
+        <a href="#library-navigation">Library Navigation</a>
+        <a href="#about">About</a>
+        <a href="#contact-us">Contact Us</a>
     </nav>
 
-    <div class="text-container">
+    <!-- Home Section -->
+    <div id="home" class="text-container">
         <h1>Welcome to Our Library</h1>
         <p>Your gateway to a world of knowledge</p>
-        <a href="library-navigation.html" class="back-button">Next</a>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
     </div>
+
+    <!-- Library Navigation Section -->
+    <div id="library-navigation" class="text-container">
+        <h1>LIBRARY NAVIGATION</h1>
+        <p>A BOT TO DIRECT BOOK LOCATION</p>
+        <img class="library-image" src="libr.png" alt="Library Image">
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="about">
+        <h1>About Us</h1>
+        <p>We are a community library dedicated to providing access to books, resources, and more for everyone.</p>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" class="contact">
+        <h1>Contact Us</h1>
+        <p>Email: contact@library.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <a href="javascript:window.history.back()" class="back-button">Back</a> <!-- Back Button -->
+    </div>
+
+    <!-- Dialogflow Messenger integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="Library"
+        agent-id="f7a9139b-84a8-48c3-800a-7fb7a042f720"
+        language-code="en"
+    ></df-messenger>
 
 </body>
 </html>
