@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY-WEBSITE - Library Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="library-navigation.html">Library Navigation</a>
+        <a href="about.html">About</a>
+        <a href="contact-us.html">Contact Us</a>
+    </nav>
+
+    <!-- Library Navigation Section -->
+    <div id="library-navigation" class="text-container">
+        <h1>LIBRARY NAVIGATION</h1>
+        <p>A BOT TO DIRECT BOOK LOCATION</p>
+        <img class="library-image" src="libr.png" alt="Library Image">
+    </div>
+
+    <!-- Dialogflow Messenger integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="Library"
+        agent-id="f7a9139b-84a8-48c3-800a-7fb7a042f720"
+        language-code="en"
+    ></df-messenger>
+
+</body>
+</html>
